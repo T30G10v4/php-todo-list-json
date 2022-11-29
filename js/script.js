@@ -25,8 +25,6 @@ createApp ({
 
         });
 
-        console.log(this.tasks);
-
     },
 
     methods : {
@@ -45,9 +43,23 @@ createApp ({
 
         addNewTask: function() {
 
-            this.tasks.push({...this.singleTask});
-            this.singleTask.name = "";
+            
 
+            const data = this.singleTask;
+            console.log(data);
+
+            axios
+                .post("server.php", data, {
+                    headers: { "Content-Type": "multipart/form-data" },
+                    })
+                .then((resp) => {
+                    // this.tasks = resp.data;
+                    // this.newTodo = "";
+                    this.tasks.push({...this.singleTask});
+                    this.singleTask.name = "";
+                });
+
+            
         } 
 
     }

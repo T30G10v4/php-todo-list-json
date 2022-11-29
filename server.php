@@ -49,6 +49,14 @@
 $string = file_get_contents("toDoList.json");
 $tasks = json_decode($string, true);
 
+if (isset($_POST["singleTask"])) {
+
+    $new_todo = $_POST["singleTask"];
+    $tasks[] = $new_todo;
+    // Scrittura nel file
+    file_put_contents("todo-list.json", json_encode($tasks));
+}
+
 header("Content-Type: application/json");
 echo json_encode($tasks);
 
