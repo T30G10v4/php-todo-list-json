@@ -1,0 +1,110 @@
+
+/*------VARIABLES------*/
+:root {
+
+    --bg-color-primo: blue;
+    --bg-color-secondo: red;
+    --header-footer-height: calc(100vh / 12);
+    --header-footer-color: #b2dfdb;
+    --main-color: #82ada9;
+    --text-color: black;
+    --padding: 2em;
+    
+}
+
+/*-----------------------COMMON PARTS---------------------------------------*/
+
+/*-----------------------SPECIFIED PARTS BY ID------------------------------*/
+
+/*HEADER*/
+header {
+
+    position: absolute;
+    top:0;
+    left: 0;
+
+    height: var(--header-footer-height);
+    width: 100%;
+
+    background-color: var(--header-footer-color);
+
+    padding: var(--padding);
+
+}
+
+header .logo {
+
+    height: 100%;
+    
+    font-size: calc(var(--header-footer-height) - 4rem);
+    line-height: calc(var(--header-footer-height) - 4rem);
+
+}
+
+/*MAIN*/
+main {
+
+    position: absolute;
+    top: var(--header-footer-height);
+    left: 0;
+
+    height: calc(100% - (var(--header-footer-height) * 2));
+    width: 100%;
+
+    background-color: var(--main-color);
+    overflow: auto;
+
+    padding: var(--padding);
+
+}
+
+main .form-task {
+
+    text-align: center;
+    padding-bottom: 2em;
+
+}
+
+main ul {
+
+    list-style-type: none;
+    font-size: 2rem;
+
+}
+
+main li {
+
+    background-color: var(--header-footer-color);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+
+}
+
+main li span {
+
+    cursor: pointer;
+
+}
+
+main .is-done {
+
+    text-decoration: line-through;
+
+}
+
+/*FOOTER*/
+footer {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    height: var(--header-footer-height);
+    width: 100%;
+
+    background-color: var(--header-footer-color);
+
+}
+
+
